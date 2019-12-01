@@ -1,0 +1,6 @@
+{
+  "short_name": "RChoose",
+  "name": "RandomChoose",
+  "display": "standalone",
+  "start_url": "index.html"
+}

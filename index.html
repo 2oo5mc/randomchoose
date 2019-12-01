@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>RandomChoose</title>
+
+    <link rel="manifest" href="manifest.json">
+
     <style>
         /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -358,14 +361,14 @@
 <body onload="afterload()">
 <div>
     <div style="background-color: #96c8ff;padding: 1em 3em;text-align:center;font-size: 4em">RandomChoose</div>
-    <div id="forms">
-        <div id="form" style="font-size: 2em;padding:0em 0em">
-<!--            <div style="display:flex;padding:0.25em 0.5em;height:3em;background-color: #C9DEE5;">
-                <input style="width: 90%"><button style="flex:1" onclick="addform()">+</button> -->
-            </div>
+    <div id="forms" >
+        <div id="form" style="font-size: 2em;"></div>
         </div>
+    <button onclick="choose()" style="font-size: 3em;width: 100%;height: 100%">Choose!</button>
     </div>
 </div>
+
+
 <script>
     var form1 = document.createElement('div');
     var form2 = document.createElement('div');
@@ -376,35 +379,45 @@
 
     var clonearray = [];
 
+    function choose() {
+        alert('結果は' + clonearray[Math.floor( Math.random()*clonearray.length)].children[0].children[0].value + 'です。');
+    }
+
     function afterload() {
 
         var local = setup();
 
         clonearray.push(local);
 
+
         document.getElementById('forms').appendChild(clonearray[count]);
 
+        document.getElementById('removebutton').parentElement.removeChild(document.getElementById('removebutton'));
 
         count++;
 
     }
     function addform() {
         var local = setup();
-
         clonearray.push(local);
-        console.log(count);
-        console.log(clonearray[count]);
         document.getElementById('forms').appendChild(clonearray[count]);
         count++;
 
     }
 
+    function removeform(el) {
+        el.parentElement.parentElement.removeChild(el.parentElement)
+    }
+    
     function setup() {
 
         var temp  = document.createElement('div');
         var temp2 = document.createElement('div');
         var temp3 = document.createElement('input');
         var temp4 = document.createElement('button');
+
+        var temp5 = document.createElement('button');
+
 
         temp.style.fontSize = '2em';
         temp.style.padding = '0em 0em';
@@ -414,17 +427,25 @@
         temp2.style.height = '3em';
         temp2.style.backgroundColor = '#C9DEE5';
 
-        temp3.style.width = '90%';
+        temp3.style.width = '80%';
 
         temp4.style.flex= '1';
 
         temp4.innerText = '+';
 
+        temp5.style.flex= '1';
+        temp5.innerText = '-';
+
+
+
         temp4.setAttribute('onclick','addform()');
+        temp5.setAttribute('onclick','removeform(this)');
+        temp5.setAttribute('id','removebutton');
 
         temp.appendChild(temp2);
         temp2.appendChild(temp3);
         temp2.appendChild(temp4);
+        temp2.appendChild(temp5);
 
         return temp;
 
