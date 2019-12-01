@@ -2,5 +2,12 @@
   "short_name": "RChoose",
   "name": "RandomChoose",
   "display": "standalone",
-  "start_url": "index.html"
+  "start_url": "index.html",
+  	"icons": [
+		{
+			"src": "http://github.com/2oo5mc.png",
+			"type": "image/png"
+		}
+	]
+
 }
