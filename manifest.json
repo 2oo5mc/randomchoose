@@ -5,7 +5,7 @@
   "start_url": "index.html",
   	"icons": [
 		{
-			"src": "http://github.com/2oo5mc.png",
+			"src": "icon.png",
 			"sizes": "192x192",
 			"type": "image/png"
 		}
