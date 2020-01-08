@@ -391,7 +391,7 @@
 
 <body onload="afterload()">
     <div>
-        <div style="background-color: #96c8ff;text-align:center;font-size: 2em">RandomChoose</div>
+        <div style="background-color: #96c8ff;text-align:center;font-size: 5em">RandomChoose</div>
         <div id="forms">
             <div id="form" style="font-size: 2em;"></div>
         </div>
@@ -407,7 +407,7 @@
         var clonearray = [];
 
         function choose() {
-            document.body.innerHTML = '結果は' + clonearray[Math.floor(Math.random() * clonearray.length)].children[0].children[0].value + 'です。<button onclick="location.reload()">リロード</button>'
+            document.body.innerHTML = '<h1 style="font-size:3em">結果は' + clonearray[Math.floor(Math.random() * clonearray.length)].children[0].children[0].value + 'です。<button onclick="location.reload()">リロード</button></h1>'
         }
 
         function afterload() {
