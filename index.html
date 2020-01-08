@@ -407,7 +407,7 @@
         var clonearray = [];
 
         function choose() {
-            document.body.innerHTML = '<h1 style="font-size:3em">結果は' + clonearray[Math.floor(Math.random() * clonearray.length)].children[0].children[0].value + 'です。<button onclick="location.reload()">リロード</button></h1>'
+            alert('結果は' + clonearray[Math.floor(Math.random() * clonearray.length)].children[0].children[0].value + 'です。');
         }
 
         function afterload() {
